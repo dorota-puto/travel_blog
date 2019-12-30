@@ -449,10 +449,8 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript" src="js/gmaps.js"></script>
 
   <script>
-
 
     var coordinates = new Map();
     coordinates.set('Scotland', { lat: 55.953056, lng: -3.188889 });
@@ -472,17 +470,12 @@
       });
     }
 
-   // $(".countries tr").click(function () {
-    //  console.log($(this).find('td:eq(0)').text());
-   // });
-
     $(".countries tr").click(function () {
       clearMarkers();
       var marker = new google.maps.Marker({
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP,
-
         position: coordinates.get($(this).find('td:eq(0)').text())
       });
       marker.addListener('click', toggleBounce);
@@ -497,6 +490,7 @@
 
     function clearMarkers() {
       setMapOnAll(null);
+      markers = [];
     }
 
     function toggleBounce() {
@@ -509,13 +503,9 @@
 
   </script>
 
-
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3eVCIOiiEvIfLUgoL8MGidtgTVpDgiag&callback=initMap"
     type="text/javascript"></script>
-
-
-
 
 </body>
 
