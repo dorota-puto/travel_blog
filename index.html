@@ -208,27 +208,31 @@
           <table class="table marg countries ">
             <thead class="black white-text ">
               <tr>
-                <th scope="col">Islands</th>
+                <th class="col-width" scope="col">Islands</th>
+                <th scope="col">#</th>
                 <th scope="col">Country</th>
                 <th scope="col">Night/day temperatures in winter</th>
                 <th scope="col">Night/day temperatures in summer</th>
               </tr>
             </thead>
-            <tbody>
-              <tr id="country1">
-                <th scope="row">1</th>
+            <tbody class="pointer">
+              <tr>
+                <th class="col-width" scope="row"></th>
+                <td>1</td>
                 <td>Scotland</td>
                 <td>-1 / -6</td>
                 <td>13 / 24</td>
               </tr>
-              <tr id="country2">
-                <th scope="row">2</th>
+              <tr>
+                <th class="col-width" scope="row"></th>
+                <td>2</td>
                 <td>Iceland</td>
                 <td>-2 / -4</td>
                 <td>7 / 14</td>
               </tr>
-              <tr id="country3">
-                <th scope="row">3</th>
+              <tr>
+                <th class="col-width" scope="row"></th>
+                <td>3</td>
                 <td>Faroe Islands</td>
                 <td>1 / 5</td>
                 <td>8 / 13</td>
@@ -239,27 +243,31 @@
           <table class="table countries">
             <thead class="top-nav-collapse">
               <tr>
-                <th scope="col">Continent</th>
+                <th class="col-width" scope="col">Continent</th>
+                <th scope="col">#</th>
                 <th scope="col">Country</th>
                 <th scope="col">Night/day temperatures in winter</th>
                 <th scope="col">Night/day temperatures in summer</th>
               </tr>
             </thead>
-            <tbody>
-              <tr id="country4">
-                <th scope="row">1</th>
+            <tbody class="pointer">
+              <tr>
+                <th class="col-width" scope="row"></th>
+                <td>1</td>
                 <td>Norway</td>
                 <td>-1 / -6</td>
                 <td>11 / 19</td>
               </tr>
-              <tr id="country5">
-                <th scope="row">2</th>
+              <tr>
+                <th class="col-width" scope="row"></th>
+                <td>2</td>
                 <td>Sweden</td>
                 <td>-1 / -4</td>
                 <td>12 / 20</td>
               </tr>
-              <tr id="country6">
-                <th scope="row">3</th>
+              <tr>
+                <th class="col-width" scope="row"></th>
+                <td>3</td>
                 <td>Finland</td>
                 <td>-3 / -6</td>
                 <td>13 / 23</td>
@@ -327,7 +335,7 @@
                 <section class="form-dark">
 
                   <!--Form without header-->
-                  <div class="card card-image" style="background-image: url('img/m3.jpg'); width: 33rem;">
+                  <div class="card card-image" style="background-image: url('img/m3.jpg'); width: 32rem;">
                     <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
 
                       <!--Header-->
@@ -371,8 +379,6 @@
                   <!--/Form without header-->
 
                 </section>
-
-
 
               </div>
 
@@ -476,7 +482,7 @@
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP,
-        position: coordinates.get($(this).find('td:eq(0)').text())
+        position: coordinates.get($(this).find('td:eq(1)').text())
       });
       marker.addListener('click', toggleBounce);
       markers.push(marker);
