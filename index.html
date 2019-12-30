@@ -205,7 +205,7 @@
           <h5 class="text-uppercase mb-4 black-text wow fadeInDown marg" data-wow-delay="0.4s"><strong>Countries on the
               blog- statistics</strong></h5>
 
-          <table class="table marg ">
+          <table class="table marg countries ">
             <thead class="black white-text ">
               <tr>
                 <th scope="col">Islands</th>
@@ -215,28 +215,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr id="country1">
                 <th scope="row">1</th>
-                <td id="country1">Scotland</td>
+                <td>Scotland</td>
                 <td>-1 / -6</td>
                 <td>13 / 24</td>
               </tr>
-              <tr>
+              <tr id="country2">
                 <th scope="row">2</th>
-                <td id="country2">Iceland</td>
+                <td>Iceland</td>
                 <td>-2 / -4</td>
                 <td>7 / 14</td>
               </tr>
-              <tr>
+              <tr id="country3">
                 <th scope="row">3</th>
-                <td id="country3">Faroe Islands</td>
+                <td>Faroe Islands</td>
                 <td>1 / 5</td>
                 <td>8 / 13</td>
               </tr>
             </tbody>
           </table>
 
-          <table class="table">
+          <table class="table countries">
             <thead class="top-nav-collapse">
               <tr>
                 <th scope="col">Continent</th>
@@ -252,15 +252,15 @@
                 <td>-1 / -6</td>
                 <td>11 / 19</td>
               </tr>
-              <tr>
+              <tr id="country5">
                 <th scope="row">2</th>
-                <td id="country5">Sweden</td>
+                <td>Sweden</td>
                 <td>-1 / -4</td>
                 <td>12 / 20</td>
               </tr>
-              <tr>
+              <tr id="country6">
                 <th scope="row">3</th>
-                <td id="country6">Finland</td>
+                <td>Finland</td>
                 <td>-3 / -6</td>
                 <td>13 / 23</td>
               </tr>
@@ -379,14 +379,6 @@
             </div>
           </div>
 
-
-
-
-
-
-
-
-
           <!--Section: Live preview-->
           <!--Grid column-->
         </div>
@@ -461,8 +453,16 @@
 
   <script>
 
+
+    var coordinates = new Map();
+    coordinates.set('Scotland', { lat: 55.953056, lng: -3.188889 });
+    coordinates.set('Iceland', { lat: 64.133333, lng: -21.933333 });
+    coordinates.set('Faroe Islands', { lat: 61.969944, lng: -6.844481 });
+    coordinates.set('Norway', { lat: 59.933333, lng: 10.683333 });
+    coordinates.set('Sweden', { lat: 59.35, lng: 18.066667 });
+    coordinates.set('Finland', { lat: 60.166667, lng: 24.933333 });
+
     var map;
-    var marker;
     var markers = [];
 
     function initMap() {
@@ -472,41 +472,32 @@
       });
     }
 
+   // $(".countries tr").click(function () {
+    //  console.log($(this).find('td:eq(0)').text());
+   // });
 
-    $("#country1").click(function () {
+    $(".countries tr").click(function () {
       clearMarkers();
-      marker = new google.maps.Marker({
+      var marker = new google.maps.Marker({
         map: map,
         draggable: true,
         animation: google.maps.Animation.DROP,
-        position: { lat: 55.953056, lng: -3.188889 }
+
+        position: coordinates.get($(this).find('td:eq(0)').text())
       });
       marker.addListener('click', toggleBounce);
       markers.push(marker);
     });
 
     function setMapOnAll(map) {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(map);
-        }
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
       }
+    }
 
     function clearMarkers() {
-        setMapOnAll(null);
-      }
-
-    $("#country2").click(function () {
-      clearMarkers();
-      marker = new google.maps.Marker({
-        map: map,
-        draggable: true,
-        animation: google.maps.Animation.DROP,
-        position: { lat: 64.133333, lng: -21.933333 }
-      });
-      marker.addListener('click', toggleBounce);
-      markers.push(marker);
-    });
-
+      setMapOnAll(null);
+    }
 
     function toggleBounce() {
       if (marker.getAnimation() !== null) {
