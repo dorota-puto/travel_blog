@@ -14,7 +14,7 @@
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="css/mdb.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="css/style.css">
+  
   <link rel="stylesheet" href="css/blog_style.css">
 
 </head>
@@ -204,77 +204,78 @@
 
           <h5 class="text-uppercase mb-4 black-text wow fadeInDown marg" data-wow-delay="0.4s"><strong>Countries on the
               blog- statistics</strong></h5>
-
-          <table class="table marg countries ">
-            <thead class="black white-text ">
-              <tr>
-                <th class="col-width" scope="col">Islands</th>
-                <th scope="col">#</th>
-                <th scope="col">Country</th>
-                <th scope="col">Night/day temperatures in winter</th>
-                <th scope="col">Night/day temperatures in summer</th>
-              </tr>
-            </thead>
-            <tbody class="pointer">
-              <tr>
-                <th class="col-width" scope="row"></th>
-                <td>1</td>
-                <td>Scotland</td>
-                <td>-1 / -6</td>
-                <td>13 / 24</td>
-              </tr>
-              <tr>
-                <th class="col-width" scope="row"></th>
-                <td>2</td>
-                <td>Iceland</td>
-                <td>-2 / -4</td>
-                <td>7 / 14</td>
-              </tr>
-              <tr>
-                <th class="col-width" scope="row"></th>
-                <td>3</td>
-                <td>Faroe Islands</td>
-                <td>1 / 5</td>
-                <td>8 / 13</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table class="table countries">
-            <thead class="top-nav-collapse">
-              <tr>
-                <th class="col-width" scope="col">Continent</th>
-                <th scope="col">#</th>
-                <th scope="col">Country</th>
-                <th scope="col">Night/day temperatures in winter</th>
-                <th scope="col">Night/day temperatures in summer</th>
-              </tr>
-            </thead>
-            <tbody class="pointer">
-              <tr>
-                <th class="col-width" scope="row"></th>
-                <td>1</td>
-                <td>Norway</td>
-                <td>-1 / -6</td>
-                <td>11 / 19</td>
-              </tr>
-              <tr>
-                <th class="col-width" scope="row"></th>
-                <td>2</td>
-                <td>Sweden</td>
-                <td>-1 / -4</td>
-                <td>12 / 20</td>
-              </tr>
-              <tr>
-                <th class="col-width" scope="row"></th>
-                <td>3</td>
-                <td>Finland</td>
-                <td>-3 / -6</td>
-                <td>13 / 23</td>
-              </tr>
-            </tbody>
-          </table>
-
+          <div style="overflow-x:auto;">
+            <table class="table marg countries ">
+              <thead class="black white-text ">
+                <tr>
+                  <th class="col-width" scope="col">Islands</th>
+                  <th scope="col">#</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">Night/day temperatures in winter</th>
+                  <th scope="col">Night/day temperatures in summer</th>
+                </tr>
+              </thead>
+              <tbody class="pointer">
+                <tr>
+                  <th class="col-width" scope="row"></th>
+                  <td>1</td>
+                  <td>Scotland</td>
+                  <td>-1 / -6</td>
+                  <td>13 / 24</td>
+                </tr>
+                <tr>
+                  <th class="col-width" scope="row"></th>
+                  <td>2</td>
+                  <td>Iceland</td>
+                  <td>-2 / -4</td>
+                  <td>7 / 14</td>
+                </tr>
+                <tr>
+                  <th class="col-width" scope="row"></th>
+                  <td>3</td>
+                  <td>Faroe Islands</td>
+                  <td>1 / 5</td>
+                  <td>8 / 13</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="table countries">
+              <thead class="top-nav-collapse">
+                <tr>
+                  <th class="col-width" scope="col">Continent</th>
+                  <th scope="col">#</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">Night/day temperatures in winter</th>
+                  <th scope="col">Night/day temperatures in summer</th>
+                </tr>
+              </thead>
+              <tbody class="pointer">
+                <tr>
+                  <th class="col-width" scope="row"></th>
+                  <td>1</td>
+                  <td>Norway</td>
+                  <td>-1 / -6</td>
+                  <td>11 / 19</td>
+                </tr>
+                <tr>
+                  <th class="col-width" scope="row"></th>
+                  <td>2</td>
+                  <td>Sweden</td>
+                  <td>-1 / -4</td>
+                  <td>12 / 20</td>
+                </tr>
+                <tr>
+                  <th class="col-width" scope="row"></th>
+                  <td>3</td>
+                  <td>Finland</td>
+                  <td>-3 / -6</td>
+                  <td>13 / 23</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div class=" map-window" id="map"></div>
 

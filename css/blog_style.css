@@ -5,7 +5,7 @@ header,
   height: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 740px) {
   html,
   body,
   header,
