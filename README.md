@@ -6,7 +6,7 @@
 Design and implementation of functional Travel Blog layout. 
 
 ## Demo
-TODO
+http://travelblog-puto.netlify.app/
 
 ## Gained sills:
 * Familiarized with Bootstrap framework
